@@ -1,10 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;400&family=Nunito:ital,wght@1,200&family=Yanone+Kaffeesatz:wght@500&display=swap');
 
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+rot{
+    --font-primaria: "Yanone Kaffeesatz", serif;
+    --font-secundaria: Nunito ,serif;
+    --font-acao: "Darker Grotesque",serif;
+}
 
 *{
     padding: 0;
     margin: 0;
+    list-style: none;
+    text-decoration: none;
 }
 header{
     width: 100%;
@@ -12,7 +19,28 @@ header{
     overflow: hidden;
     position: relative;
 }
+.hamburguer{
+    /*background-color:red;*/
+    width: 2rem;
+    height: 2rem;
+    position: fixed;
+    z-index: 100;
+    right: 2rem;
+    top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    cursor: pointer;
 
+}
+.line{
+    width: 100%;
+    height: .1rem;
+    background-color: white;
+    box-shadow: 0.1rem 0.1rem 1px #0B0909;
+
+    
+}
 .img-wrapper{
     width: 100%;
     height: 100%; 
@@ -45,7 +73,7 @@ header{
 
 .banner h1 {
     color: #ffffff;
-    font-family: "Yanone Kaffeesatz", serif;
+    font-family: var(--font-primaria);
     font-size: 5rem;
     font-weight: 300;
     text-shadow: .2rem .3rem 2px rgba(0,0,0, .4);
@@ -57,7 +85,7 @@ header{
 }
 .banner p{
     color: #ffffff;
-    font-family: Nunito ,serif;
+    font-family: var(--font-secundaria);
     font-size: 1.9rem;
     text-shadow: .2rem .2rem rgba(0,0,0, .4);
     margin-bottom: 2rem;
@@ -66,7 +94,7 @@ header{
 
 }
 .banner button{
-    font-family:  "Darker Grotesque",serif;
+    font-family:  var(--font-acao);
     color: white;
     text-transform: uppercase;
     font-size: 1.2rem; 
@@ -92,4 +120,66 @@ header{
         opacity: 1;
     }
     
+}
+
+
+.sidebar{
+    width: 20rem;
+    height: 100vh;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    right: -20rem;
+
+
+}
+.sidebar.show-menu{
+    right: 0;
+}
+.menu{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.menu-item{
+    text-align: center;
+    margin-bottom: .5rem;
+}
+
+.menu-link{
+    font-family: var(--font-acao);
+    font-size: 1.7rem;
+    color: #555;
+    transition: color 1s;
+
+}
+
+.menu-link:hover{
+    color: #BB4C3A;
+}
+
+.social-midia{ 
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.social-midia i{
+    background-color: #BB4C3A;
+    color: rgba(255,255,255);
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: background-color 1s;
+    
+}
+.social-midia i:hover{
+    background-color: gray;
 }
